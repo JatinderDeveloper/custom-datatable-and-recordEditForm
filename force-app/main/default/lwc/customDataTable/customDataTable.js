@@ -119,7 +119,7 @@ deleteDataWithId(currentRow) {
       window.console.log("Error ====> " + error);
       this.dispatchEvent(
         new ShowToastEvent({
-          title: "Error!!",
+          title: "this is ErrorError!!",
           message: error.message,
           variant: "error"
         })
