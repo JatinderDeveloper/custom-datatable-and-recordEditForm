@@ -1,0 +1,22 @@
+li:focus {
+    background: aquamarine;
+  }
+  .crossBtn {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+}
+.spinner_1 .slds-spinner_container {
+  position: absolute;
+  top: 0;
+  width: 27%;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  background-color: transparent; 
+  visibility: visible;
+  opacity:1; 
+  transition: opacity .2s ease,visibility 0s;
+  transition-delay: 0s,.3s;
+}
+/**/li:first-child { background-color:#F5F5F5; }

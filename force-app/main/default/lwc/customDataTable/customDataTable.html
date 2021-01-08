@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title={title} style="width: 100%;">
+        <lightning-button label="New" slot="actions" onclick={handleClick}></lightning-button>
+
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <template if:true={data.length}>
+                    <lightning-datatable key-field="id" data={data} columns={columns} onrowaction={handleRowAction}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                    <!-- Spinner -->
+                    <div class="spinnerClass">
+                        <template if:true={showLoadingSpinner}>
+                            <lightning-spinner alternative-text="Loading" size="medium"  role="alert"></lightning-spinner>
+                        </template>
+                    </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                    <c-custom-record-edit-form object-api-name={objectApiName} fields={fields}
+                        current-record-id={recordId} b-show-modal={bShowModal} onsuccess={handleChildEvent}
+                        onclose={handleChildEvent} field-set-name={fieldSetName}>
+                    </c-custom-record-edit-form>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-box slds-theme_default" style="width: 100%;">
+      <c-customlookup object-api-name="Account" icon-name="standard:account" where-part="" limit="5" off-set=""
+            search-field="Name" label="Related to Account" place-holder="Search..."
+            onmultiplevalueselected={multipleValueSelected} onvalueselected={handleValueSelcted} multi-select="false">
+        </c-customlookup>
+        <template if:true={singleValue}>
+            <div class="slds-box slds-p-top_xx-small">
+                selected Id:{selectedRecordId}</br>
+                selected Name:{selectedName}
+            </div>
+        </template>
+        <template if:true={multipleValue}>
+            <div class="slds-box slds-p-top_xx-small">
+                <template for:each={multipleRecord} for:item="record">
+                    <div class="slds-box" key={record.Id}>
+                        <p> Id:{record.RecordId}<br />Name:{record.Name} </p>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
+
+<!--<c-customlookup object-api-name="Account" icon-name="standard:account" onvalueselected={handleValueSelcted}
+        multi-select="No" > Rating = 'Hot' -->
