@@ -29,7 +29,7 @@
         <name>StaticResource</name>
     </types> -->
     <types>
-        <members>*</members>
+        <members>customRecordEditForm</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>50.0</version>

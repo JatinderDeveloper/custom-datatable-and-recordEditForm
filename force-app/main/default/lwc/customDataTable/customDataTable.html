@@ -17,10 +17,12 @@
                 </template>
             </lightning-layout-item>
             <lightning-layout-item size="12">
-                    <c-custom-record-edit-form object-api-name={objectApiName} fields={fields}
-                        current-record-id={recordId} b-show-modal={bShowModal} onsuccess={handleChildEvent}
-                        onclose={handleChildEvent} field-set-name={fieldSetName}>
+                <template if:true={showEditForm}>
+                    <c-custom-record-edit-form object-api-name={objectApiName}  fields={fields} field-set-name={fieldSetName}
+                        current-record-id={recordId} b-show-modal={bShowModal} onsuccess={handleChildEvent} heading={heading}
+                        onclose={handleChildEvent}>
                     </c-custom-record-edit-form>
+                </template>
             </lightning-layout-item>
         </lightning-layout>
     </lightning-card>
